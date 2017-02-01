@@ -1,0 +1,123 @@
+page-home {
+
+}
+
+$sideBarWidth: 280px;
+
+$iosHeaderBorderColor: #D7D7D7;
+$iosBodyBorderColor: #D7D7D7;
+$iosHeaderBackgroundColor: #f8f8f8;
+$iosBodyBackgroundColor: #ffffff;
+$iosFooterBorderColor: #D7D7D7;
+$iosFooterBackgroundColor: #f8f8f8;
+
+$androidHeaderBorderColor: #D7D7D7;
+$androidHeaderBackgroundColor: #f8f8f8;
+$androidBodyBorderColor: #D7D7D7;
+$androidBodyBackgroundColor: #ffffff;
+$androidFooterBackgroundColor: #f8f8f8;
+$androidFooterBorderColor: #D7D7D7;
+
+// IMPORTANT
+// Disable all, if you wish a footer in the sidebar.
+
+.scroll-content {
+  //margin-bottom: 0 !important;
+}
+
+.mainContent {
+  //margin-bottom: 44px !important;
+}
+
+.rightFooter {
+  //position: relative;
+}
+
+// END IMPORTANT
+
+.leftHeader, .leftFooter {
+  width: $sideBarWidth;
+}
+
+.rightHeader, .rightFooter, .mainContent {
+  &.true {
+    left: $sideBarWidth !important;
+    width: calc(100% - #{$sideBarWidth});
+  }
+  &.false {
+    left: 0;
+    width: 100%;
+  }
+}
+
+.sidebarBody {
+  width: $sideBarWidth;
+  right: $sideBarWidth;
+  overflow-y: scroll;
+  padding-left: 5px;
+}
+
+.mainContent {
+  overflow-y: scroll;
+}
+
+.footer {
+  display: flex;
+}
+
+.no-scroll .scroll-content {
+  overflow: hidden;
+  display: flex;
+}
+
+.platform-ios {
+  .leftHeader {
+    border-right: 1px solid $iosHeaderBorderColor;
+    .toolbar-background {
+      background-color: $iosHeaderBackgroundColor;
+    }
+  }
+  .sidebarBody {
+    border-right: 1px solid $iosBodyBorderColor;
+    background-color: $iosBodyBackgroundColor;
+  }
+
+  .leftFooter {
+    border-right: 1px solid $iosFooterBorderColor;
+    .toolbar-background {
+      background-color: $iosFooterBackgroundColor;
+    }
+  }
+  .rightFooter {
+    .toolbar-background {
+      background-color: $iosFooterBackgroundColor;
+    }
+  }
+}
+
+.platform-android {
+  .leftHeader {
+    border-right: 1px solid $androidHeaderBorderColor;
+    .toolbar-background {
+      background-color: $androidHeaderBackgroundColor;
+    }
+    &:after {
+      background-image: none;
+    }
+  }
+  .sidebarBody {
+    border-right: 1px solid $androidBodyBorderColor;
+    background-color: $androidBodyBackgroundColor;
+  }
+  .leftFooter {
+    border-right: 1px solid $androidFooterBorderColor;
+    .toolbar-background {
+      background-color: $androidFooterBackgroundColor;
+    }
+  }
+  .rightFooter {
+    .toolbar-background {
+      background-color: $androidFooterBackgroundColor;
+    }
+  }
+}

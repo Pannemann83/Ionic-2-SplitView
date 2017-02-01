@@ -1,0 +1,32 @@
+<!-- Left menu only on phones. -->
+<ion-menu side="left" [content]="content">
+    <ion-header>
+        <ion-navbar color="navbarColor">
+            <button ion-button icon-only menuToggle="left">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+            <ion-title>Left</ion-title>
+        </ion-navbar>
+    </ion-header>
+    <ion-content padding>
+        <ion-title><small>Left Sidebar</small></ion-title>
+    </ion-content>
+</ion-menu>
+
+<!-- Right menu visible on all devices. -->
+<ion-menu side="right" [content]="content">
+    <ion-header>
+        <ion-navbar color="navbarColor">
+            <ion-title>Right</ion-title>
+            <button ion-button icon-only menuToggle="right" end>
+                <ion-icon name="arrow-forward"></ion-icon>
+            </button>
+        </ion-navbar>
+    </ion-header>
+
+    <ion-content padding >
+        <ion-title><small>Right Sidebar</small></ion-title>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #content [root]="rootPage"></ion-nav>
